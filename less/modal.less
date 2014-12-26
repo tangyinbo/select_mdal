@@ -1,0 +1,50 @@
+@charset "utf-8";
+*{margin:0;padding:0}
+@modal_width:630px;
+.show-content-modal{
+	background: #F8F8F8;
+	position: absolute;
+	z-index: 1000;
+	width: @modal_width;
+	height:300px;
+	border:1px solid #888888;
+	overflow-y: auto;
+}
+.modal_title{
+	height:30px;
+	width:80%;
+	margin:0 auto;
+	border-bottom: 1px solid #888888;
+	box-shadow: 0 1px 0 #D0D0D0;
+	text-align: center;
+	line-height: 30px;
+}
+.modal_content{
+	width:100%;
+	list-style: none;
+}
+
+//文本溢出省略号
+.content_ellipsis_style{
+    overflow: hidden;  
+    text-overflow: ellipsis;  
+    -o-text-overflow: ellipsis; /*For Opera*/  
+    -ms-text-overflow: ellipsis; /*For IE8*/  
+}
+
+//显示项样式
+.modal_item{
+	width:(@modal_width - 30)/3;
+	text-align: center;
+	height:30px;
+	line-height: 30px;
+	float: left;
+	.content_ellipsis_style;
+	cursor: pointer;
+	padding:2px;
+	&:hover{
+		background: #D0D0D0;
+		border-radius: 5px;
+		text-decoration: underline;
+	}
+}

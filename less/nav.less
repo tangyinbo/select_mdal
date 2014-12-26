@@ -1,0 +1,68 @@
+@charset 'utf-8';
+*{
+	maigin:0;padding:0
+}
+@nav_width:1000px;
+
+.common_bg_linegradient(@color1:black,@color2:white,@color3:red){
+	background: -moz-linear-gradient(@color1,@color2,@color3); /* FF 3.6+ */
+	background: -webkit-linear-gradient(@color1,@color2,@color3); /* Safari 5.1+, Chrome 10+ */
+	background: -o-linear-gradient(@color1,@color2,@color3); /* Opera 11.10 */
+	background: linear-gradient(@color1,@color2,@color3); /* the standard */
+}
+.nav_container{
+	position:relative;
+	width:@nav_width;
+	height:50px;
+	background: #E80000;	
+	margin: 0 auto;
+}
+
+.nav_{
+	position: flex;
+}
+
+/*导航条项样式
+*/
+.nav_item{
+	display: inline-block;
+	height:30px;
+	position: relative;
+	top:10px;
+	line-height: 30px;
+	float: left;
+	width:@nav_width/5;
+	text-align: center;	
+	cursor:pointer;
+}
+
+
+
+/*导航条中间间隔符号*/
+.nav_item::after{
+	position: absolute;
+	right:0;
+	content:" ";
+	width:1px;
+	height:30px;
+	.common_bg_linegradient(rgba(255,255,255,.5) ,#700000,rgba(255,255,255,.5) );
+}
+
+.nav_item::before{
+	position: absolute;
+	left:0;
+	content:" ";
+	width:1px;
+	height:30px;
+	.common_bg_linegradient(rgba(255,255,255,.5) ,#700000,rgba(255,255,255,.5) );
+}
+
+.nav_item:first-child::before{
+	content:"";
+	background:none;
+}
+.nav_item:last-child::after{
+	content:"";
+	background:none;
+}
+
